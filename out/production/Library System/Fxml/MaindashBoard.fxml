@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anpDashBoard" prefHeight="400.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.dashBoardController">
+   <children>
+      <ImageView fx:id="lblManageMembers" fitHeight="93.0" fitWidth="98.0" layoutX="65.0" layoutY="127.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/Team-Members-Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lblManageBooks" fitHeight="93.0" fitWidth="98.0" layoutX="220.0" layoutY="133.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/2cfc93d7665f5d7728782700e50596e3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lblIssueBook" fitHeight="93.0" fitWidth="98.0" layoutX="370.0" layoutY="133.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/book-flat.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lblReturnbooks" fitHeight="93.0" fitWidth="98.0" layoutX="530.0" layoutY="133.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/book-open-flat.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lblSearchBooks" fitHeight="93.0" fitWidth="98.0" layoutX="668.0" layoutY="133.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/18-512.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="257.0" layoutY="41.0" text="Library Managment system">
+         <font>
+            <Font name="Noto Sans Bengali Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMenu" layoutX="361.0" layoutY="306.0" prefHeight="18.0" prefWidth="111.0" text="Welcome">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDescription" layoutX="299.0" layoutY="349.0" prefHeight="18.0" prefWidth="278.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
