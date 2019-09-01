@@ -20,32 +20,30 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 
 public class manageMembers {
+    static int memberID = 1;
     public TableView<ManageMembersTM> tblManageMembers;
     public JFXTextField txtMemberId;
     public JFXTextField txtAddress;
     public JFXTextField txtName;
     public AnchorPane anpManageMembers;
     public JFXTextField txtContactNo;
-    static int memberID=1;
     public JFXButton btnAdd;
 
 
-    public void initialize(){
+    public void initialize() {
 
         tblManageMembers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<ManageMembersTM>() {
             @Override
             public void changed(ObservableValue<? extends ManageMembersTM> observable, ManageMembersTM oldValue, ManageMembersTM newValue) {
 
                 ManageMembersTM selectedRow = tblManageMembers.getSelectionModel().getSelectedItem();
-                if(selectedRow==null){
+                if (selectedRow == null) {
                     btnAdd.setText("Add");
-
                 }
                 btnAdd.setText("Update");
                 txtMemberId.setText(selectedRow.getMemberId());
@@ -60,18 +58,18 @@ public class manageMembers {
         tblManageMembers.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("memberAddress"));
         tblManageMembers.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("contactNo"));
 
-        ObservableList<ManageMembersTM> members=FXCollections.observableList(LibraryDB.members);
+        ObservableList<ManageMembersTM> members = FXCollections.observableList(LibraryDB.members);
         tblManageMembers.setItems(members);
     }
 
     public void btnNew_Action(ActionEvent actionEvent) {
-        memberID+=1;
+        memberID += 1;
         String id = "";
-        if (memberID < 10){
+        if (memberID < 10) {
             id = "M00" + memberID;
-        }else if (memberID < 100){
+        } else if (memberID < 100) {
             id = "M0" + memberID;
-        }else{
+        } else {
             id = "M" + memberID;
         }
         txtMemberId.setText(id);
@@ -86,7 +84,7 @@ public class manageMembers {
         URL resource = this.getClass().getResource("/Fxml/MaindashBoard.fxml");
         Parent root = FXMLLoader.load(resource);
         Scene scene = new Scene(root);
-        Stage primaryStage= (Stage) this.anpManageMembers.getScene().getWindow();
+        Stage primaryStage = (Stage) this.anpManageMembers.getScene().getWindow();
         primaryStage.setScene(scene);
 
         TranslateTransition tt = new TranslateTransition(Duration.millis(350), scene.getRoot());
@@ -96,27 +94,42 @@ public class manageMembers {
     }
 
     public void btnAdd_Action(ActionEvent actionEvent) {
-        if(btnAdd.getText().equals("Add")) {
+        String name = txtName.getText();
+        String contactNO = txtContactNo.getText();
 
-            ObservableList<ManageMembersTM> members = tblManageMembers.getItems();
+        if (!name.matches("^[A-Za-z]+$")) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "You can't add digits for names ", ButtonType.OK);
+            alert.show();
+            txtName.requestFocus();
+        } else if (!contactNO.matches("^\\d{10}$")) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "You can't add more than 10 digits ", ButtonType.OK);
+            alert.show();
+            txtContactNo.requestFocus();
+        } else {
 
-            members.add(new ManageMembersTM(
-                    txtMemberId.getText(),
-                    txtName.getText(),
-                    txtAddress.getText(),
-                    txtContactNo.getText()));
-        }
-        else {
-            ManageMembersTM selectedItem = tblManageMembers.getSelectionModel().getSelectedItem();
+            if (btnAdd.getText().equals("Add")) {
 
-            selectedItem.setMemberName(txtName.getText());
-            selectedItem.setMemberAddress(txtAddress.getText());
-            selectedItem.setContactNo(txtContactNo.getText());
+                ObservableList<ManageMembersTM> members = tblManageMembers.getItems();
 
-            if(selectedItem.getMemberId().equals(txtMemberId.getText())){
-
-                Alert alert=new Alert(Alert.AlertType.INFORMATION,"Update Suessfull",ButtonType.OK);
+                members.add(new ManageMembersTM(
+                        txtMemberId.getText(),
+                        txtName.getText(),
+                        txtAddress.getText(),
+                        txtContactNo.getText()));
+                Alert alert =new Alert(Alert.AlertType.INFORMATION,"New member add successfully! ",ButtonType.OK);
                 alert.show();
+            } else {
+                ManageMembersTM selectedItem = tblManageMembers.getSelectionModel().getSelectedItem();
+
+                selectedItem.setMemberName(txtName.getText());
+                selectedItem.setMemberAddress(txtAddress.getText());
+                selectedItem.setContactNo(txtContactNo.getText());
+
+                if (selectedItem.getMemberId().equals(txtMemberId.getText())) {
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Update Suessfull", ButtonType.OK);
+                    alert.show();
+                }
             }
         }
 
@@ -125,11 +138,13 @@ public class manageMembers {
 
     public void btnDelete_Action(ActionEvent actionEvent) {
 
-        Alert alert=new Alert(Alert.AlertType.CONFIRMATION,"Are you sure", ButtonType.YES,ButtonType.NO);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure", ButtonType.YES, ButtonType.NO);
         Optional<ButtonType> buttonType = alert.showAndWait();
-        if(buttonType.get()==ButtonType.YES) {
+        if (buttonType.get() == ButtonType.YES) {
             ManageMembersTM selectedItem = tblManageMembers.getSelectionModel().getSelectedItem();
             tblManageMembers.getItems().remove(selectedItem);
         }
+        Alert alert1 =new Alert(Alert.AlertType.INFORMATION,"Member delete successfully! ",ButtonType.OK);
+        alert.show();
     }
 }

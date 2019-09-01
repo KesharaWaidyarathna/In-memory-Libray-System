@@ -9,12 +9,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anpManageBooks" prefHeight="501.0" prefWidth="623.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.manageBooks">
+<AnchorPane fx:id="anpManageBooks" prefHeight="501.0" prefWidth="623.0" style="-fx-background-color: #525456;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.manageBooks">
    <children>
-      <JFXTextField fx:id="txtBookId" labelFloat="true" layoutX="64.0" layoutY="71.0" prefHeight="28.0" prefWidth="244.0" promptText="Book ID" />
-      <JFXTextField fx:id="txtAuthor" labelFloat="true" layoutX="63.0" layoutY="169.0" prefHeight="28.0" prefWidth="523.0" promptText="Author Name" />
-      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="62.0" layoutY="117.0" prefHeight="28.0" prefWidth="523.0" promptText="Name" />
-      <Label layoutX="263.0" layoutY="20.0" text="Manage Books">
+      <JFXTextField fx:id="txtBookId" labelFloat="true" layoutX="64.0" layoutY="71.0" prefHeight="28.0" prefWidth="244.0" promptText="Book ID" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtAuthor" labelFloat="true" layoutX="63.0" layoutY="169.0" prefHeight="28.0" prefWidth="523.0" promptText="Author Name" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="62.0" layoutY="117.0" prefHeight="28.0" prefWidth="523.0" promptText="Book's Name" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
+      <Label layoutX="263.0" layoutY="20.0" text="Manage Books" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -48,7 +57,10 @@
             <TableColumn prefWidth="86.0" text="Statues" />
          </columns>
       </TableView>
-      <Pane layoutX="-138.0" prefHeight="499.0" prefWidth="172.0" style="-fx-background-color: #00FFAD;" />
-      <JFXTextField fx:id="txtStatues" labelFloat="true" layoutX="349.0" layoutY="71.0" prefHeight="28.0" prefWidth="244.0" promptText="Statues" />
+      <Pane layoutX="-138.0" prefHeight="501.0" prefWidth="172.0" style="-fx-background-color: #00FFAD;" />
+      <JFXTextField fx:id="txtStatues" labelFloat="true" layoutX="349.0" layoutY="71.0" prefHeight="28.0" prefWidth="244.0" promptText="Statues" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
    </children>
 </AnchorPane>

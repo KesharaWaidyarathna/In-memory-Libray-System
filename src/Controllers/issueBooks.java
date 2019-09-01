@@ -11,21 +11,18 @@ import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.net.URL;
 
@@ -98,8 +95,6 @@ public class issueBooks {
         txtIssueId.setText(id);
         cmbBookId.getSelectionModel().clearSelection();
         cmbMemberId.getSelectionModel().clearSelection();
-
-
     }
 
     public void btnHome_Action(ActionEvent actionEvent) throws IOException {
@@ -129,17 +124,13 @@ public class issueBooks {
                 return;
             }
         }
-
         issue.add(new IssueBooksTM(txtIssueId.getText(),bookid,memberid,dpDate.getValue().toString()));
         for (int i = 0; i <manageBooksTMS.size() ; i++) {
             if(bookid.equals(manageBooksTMS.get(i).getBookId())){
                 manageBooksTMS.get(i).setStatues("Not Availabe");
             }
-
         }
-
-    }
-
-    public void btnDelete_Action(ActionEvent actionEvent) {
+        Alert alert =new Alert(Alert.AlertType.INFORMATION,"Book issued successfully! ",ButtonType.OK);
+        alert.show();
     }
 }

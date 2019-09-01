@@ -64,7 +64,6 @@ public class dashBoardController {
                 tt.setFromX(-subScene.getWidth());
                 tt.setToX(0);
                 tt.play();
-
             }
         }
     }

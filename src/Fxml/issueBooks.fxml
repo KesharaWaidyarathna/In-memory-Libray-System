@@ -11,30 +11,28 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anpIssueBooks" prefHeight="514.0" prefWidth="639.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.issueBooks">
+<AnchorPane fx:id="anpIssueBooks" prefHeight="514.0" prefWidth="639.0" style="-fx-background-color: #525456;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.issueBooks">
    <children>
-      <JFXTextField fx:id="txtIssueId" layoutX="63.0" layoutY="63.0" prefHeight="28.0" prefWidth="308.0" promptText="Issue ID" />
-      <Label layoutX="289.0" layoutY="22.0" text="Issue Books">
+      <JFXTextField fx:id="txtIssueId" labelFloat="true" layoutX="63.0" layoutY="63.0" prefHeight="28.0" prefWidth="308.0" promptText="Issue ID" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css" unFocusColor="BLACK">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
+      <Label layoutX="289.0" layoutY="22.0" text="Issue Books" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnNew" layoutX="548.0" layoutY="20.0" onAction="#btnNew_Action" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: #2087FC;" text="New " textFill="WHITE">
+      <JFXButton fx:id="btnNew" layoutX="521.0" layoutY="20.0" onAction="#btnNew_Action" prefHeight="28.0" prefWidth="101.0" style="-fx-background-color: #2087FC;" text="New " textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnHome" layoutX="62.0" layoutY="18.0" onAction="#btnHome_Action" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: #20FC20;" text="Home" textFill="WHITE">
+      <JFXButton fx:id="btnHome" layoutX="62.0" layoutY="18.0" onAction="#btnHome_Action" prefHeight="28.0" prefWidth="101.0" style="-fx-background-color: #20FC20;" text="Home" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnIssue" layoutX="62.0" layoutY="229.0" onAction="#btnIssue_Action" prefHeight="28.0" prefWidth="132.0" style="-fx-background-color: #FC2020;" text="Issue" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="btnDelete" layoutX="482.0" layoutY="229.0" onAction="#btnDelete_Action" prefHeight="28.0" prefWidth="132.0" style="-fx-background-color: #FC2020;" text="Delete" textFill="#f5ecec">
+      <JFXButton fx:id="btnIssue" layoutX="482.0" layoutY="229.0" onAction="#btnIssue_Action" prefHeight="28.0" prefWidth="132.0" style="-fx-background-color: #FC2020;" text="Issue" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -49,8 +47,8 @@
          </columns>
       </TableView>
       <Pane layoutX="-138.0" prefHeight="514.0" prefWidth="173.0" style="-fx-background-color: #00FFAD;" />
-      <JFXDatePicker fx:id="dpDate" layoutX="418.0" layoutY="63.0" promptText="Date" />
-      <JFXComboBox fx:id="cmbBookId" layoutX="62.0" layoutY="111.0" prefHeight="28.0" prefWidth="317.0" promptText="Book ID" />
-      <JFXComboBox fx:id="cmbMemberId" layoutX="62.0" layoutY="169.0" prefHeight="28.0" prefWidth="317.0" promptText="Member ID" />
+      <JFXDatePicker fx:id="dpDate" layoutX="418.0" layoutY="63.0" promptText="Date" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css" />
+      <JFXComboBox fx:id="cmbBookId" labelFloat="true" layoutX="62.0" layoutY="111.0" prefHeight="28.0" prefWidth="317.0" promptText="Book ID" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css" />
+      <JFXComboBox fx:id="cmbMemberId" labelFloat="true" layoutX="62.0" layoutY="169.0" prefHeight="28.0" prefWidth="317.0" promptText="Member ID" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css" />
    </children>
 </AnchorPane>

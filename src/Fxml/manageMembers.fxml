@@ -9,12 +9,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anpManageMembers" prefHeight="499.0" prefWidth="608.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.manageMembers">
+<AnchorPane fx:id="anpManageMembers" prefHeight="499.0" prefWidth="608.0" style="-fx-background-color: #525456;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.manageMembers">
    <children>
-      <JFXTextField fx:id="txtMemberId" labelFloat="true" layoutX="63.0" layoutY="63.0" prefHeight="28.0" prefWidth="202.0" promptText="Enter Member ID" />
-      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="63.0" layoutY="169.0" prefHeight="28.0" prefWidth="492.0" promptText="Enter Address" />
-      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="62.0" layoutY="117.0" prefHeight="28.0" prefWidth="492.0" promptText="Enter Name" />
-      <Label layoutX="232.0" layoutY="20.0" text="Manage Members">
+      <JFXTextField fx:id="txtMemberId" labelFloat="true" layoutX="63.0" layoutY="63.0" prefHeight="28.0" prefWidth="202.0" promptText="Enter Member ID" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="63.0" layoutY="169.0" prefHeight="28.0" prefWidth="492.0" promptText="Enter Address" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="62.0" layoutY="117.0" prefHeight="28.0" prefWidth="492.0" promptText="Enter Name" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
+      <Label layoutX="232.0" layoutY="20.0" text="Manage Members" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -49,6 +58,9 @@
         </columns>
       </TableView>
       <Pane layoutX="-138.0" prefHeight="499.0" prefWidth="172.0" style="-fx-background-color: #00FFAD;" />
-      <JFXTextField fx:id="txtContactNo" labelFloat="true" layoutX="350.0" layoutY="63.0" prefHeight="28.0" prefWidth="202.0" promptText="Contact No." />
+      <JFXTextField fx:id="txtContactNo" labelFloat="true" layoutX="350.0" layoutY="63.0" prefHeight="28.0" prefWidth="202.0" promptText="Contact No." styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
    </children>
 </AnchorPane>

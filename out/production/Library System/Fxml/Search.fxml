@@ -9,10 +9,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anpSearch" prefHeight="514.0" prefWidth="639.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Search">
+<AnchorPane fx:id="anpSearch" prefHeight="514.0" prefWidth="639.0" style="-fx-background-color: #525456;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Search">
    <children>
-      <JFXTextField fx:id="txtSearch" layoutX="63.0" layoutY="63.0" prefHeight="28.0" prefWidth="558.0" promptText="Search ID/ Name/ Author" />
-      <Label layoutX="282.0" layoutY="22.0" text="Search Books">
+      <JFXTextField fx:id="txtSearch" layoutX="63.0" layoutY="63.0" prefHeight="28.0" prefWidth="558.0" promptText="Search ID/ Name/ Author" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
+      <Label layoutX="282.0" layoutY="22.0" text="Search Books" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>

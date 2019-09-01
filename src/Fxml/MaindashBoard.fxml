@@ -38,12 +38,12 @@
             <Font name="Noto Sans Bengali Bold" size="25.0" />
          </font>
       </Label>
-      <Label fx:id="lblMenu" layoutX="340.0" layoutY="279.0" prefHeight="18.0" prefWidth="111.0" text="Welcome" textFill="WHITE">
+      <Label fx:id="lblMenu" layoutX="314.0" layoutY="278.0" prefHeight="18.0" prefWidth="163.0" text="              Welcome" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lblDescription" layoutX="256.0" layoutY="334.0" prefHeight="18.0" prefWidth="278.0" textFill="WHITE">
+      <Label fx:id="lblDescription" layoutX="189.0" layoutY="334.0" prefHeight="18.0" prefWidth="424.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

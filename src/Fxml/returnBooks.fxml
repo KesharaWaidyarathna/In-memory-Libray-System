@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anpReturnBooks" prefHeight="514.0" prefWidth="639.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.returnBooks">
+<AnchorPane fx:id="anpReturnBooks" prefHeight="514.0" prefWidth="639.0" style="-fx-background-color: #525456;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.returnBooks">
     <children>
         <Label layoutX="282.0" layoutY="22.0" text="Return Books">
             <font>
@@ -42,10 +42,19 @@
             </columns>
         </TableView>
         <Pane layoutX="-138.0" prefHeight="514.0" prefWidth="173.0" style="-fx-background-color: #00FFAD;" />
-        <JFXTextField fx:id="txtIssuedate" labelFloat="true" layoutX="434.0" layoutY="63.0" prefHeight="28.0" prefWidth="184.0" promptText="Issue Date" />
-        <JFXDatePicker fx:id="dpReturnDate" layoutX="434.0" layoutY="117.0" promptText="Return Date" />
-        <JFXTextField fx:id="txtTotalFines" labelFloat="true" layoutX="60.0" layoutY="164.0" prefHeight="28.0" prefWidth="308.0" promptText="Total Fines" />
-        <JFXTextField fx:id="txtBookid" labelFloat="true" layoutX="60.0" layoutY="117.0" prefHeight="28.0" prefWidth="296.0" promptText="Book Id" />
-        <JFXComboBox fx:id="cmbIssueId" labelFloat="true" layoutX="60.0" layoutY="63.0" prefHeight="28.0" prefWidth="308.0" promptText="Issue ID" />
+        <JFXTextField fx:id="txtIssuedate" labelFloat="true" layoutX="434.0" layoutY="63.0" prefHeight="28.0" prefWidth="184.0" promptText="Issue Date" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></JFXTextField>
+        <JFXDatePicker fx:id="dpReturnDate" layoutX="434.0" layoutY="117.0" promptText="Return Date" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css" />
+        <JFXTextField fx:id="txtTotalFines" labelFloat="true" layoutX="60.0" layoutY="164.0" prefHeight="28.0" prefWidth="308.0" promptText="Total Fines" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></JFXTextField>
+        <JFXTextField fx:id="txtBookid" labelFloat="true" layoutX="60.0" layoutY="117.0" prefHeight="28.0" prefWidth="296.0" promptText="Book Id" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></JFXTextField>
+        <JFXComboBox fx:id="cmbIssueId" labelFloat="true" layoutX="60.0" layoutY="63.0" prefHeight="28.0" prefWidth="308.0" promptText="Issue ID" styleClass="jfx-text-field" stylesheets="@../CSS/textBox.css" />
     </children>
 </AnchorPane>

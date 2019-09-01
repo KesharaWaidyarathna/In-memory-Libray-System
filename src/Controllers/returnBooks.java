@@ -22,8 +22,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import sun.util.resources.LocaleData;
-
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -69,8 +67,6 @@ public class returnBooks {
                         txtBookid.setText(issueBooksTMS.get(i).getBookId());
                         txtIssuedate.setText(issueBooksTMS.get(i).getDate());
                     }
-
-
                 }
             }
         });
@@ -95,9 +91,6 @@ public class returnBooks {
                     }
 
                 }
-
-
-
             }
         });
 
@@ -107,12 +100,6 @@ public class returnBooks {
 
         ObservableList<ReturnBooksTM> returnBooksTMS = FXCollections.observableList(LibraryDB.returnBooks);
         tblReturnBooks.setItems(returnBooksTMS);
-
-
-
-
-
-
     }
 
     public void btnNew_Action(ActionEvent actionEvent) {
@@ -145,26 +132,17 @@ public class returnBooks {
 
         for (int j = 0; j <manageBooksTMS.size() ; j++) {
             if(txtBookid.getText().equals(manageBooksTMS.get(j).getBookId())){
-
                 manageBooksTMS.get(j).setStatues("Available");
             }
 
             ObservableList<IssueBooksTM> issuerow = FXCollections.observableList(LibraryDB.issueBooks);
 
-
             for (int k = 0; k <issuerow.size() ; k++) {
                 if(selectedItem.equals(issuerow.get(k).getIssuId())){
                     issuerow.remove(k);
                 }
-
             }
-
-
         }
-
-
-
-
     }
 
 }

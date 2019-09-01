@@ -2,7 +2,6 @@ package Controllers;
 
 import Classes.LibraryDB;
 import Classes.ManageBooksTM;
-import Classes.ManageMembersTM;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.animation.TranslateTransition;
@@ -21,7 +20,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -56,18 +54,14 @@ public class manageBooks {
                 if(selectedItem==null){
                     btnAdd.setText("Add");
                 }
-
                 btnAdd.setText("Update");
             }
         });
-
         txtBookId.setDisable(true);
         txtStatues.setText("Available");
         txtStatues.setDisable(true);
-
-
-
     }
+
     public void btnNew_Action(ActionEvent actionEvent) {
         bookId+=1;
         String id = "";
@@ -93,25 +87,36 @@ public class manageBooks {
             ManageBooksTM selectedItem = tblManageBooks.getSelectionModel().getSelectedItem();
             tblManageBooks.getItems().remove(selectedItem);
         }
+        Alert alert1 =new Alert(Alert.AlertType.INFORMATION,"Book delete successfully! ",ButtonType.OK);
+        alert1.show();
     }
 
     public void btnAdd_Action(ActionEvent actionEvent) {
-        if(btnAdd.getText().equals("Add")){
+        String authorName=txtAuthor.getText();
+        if(!authorName.matches("^[A-Za-z]+$")){
+            Alert alert=new Alert(Alert.AlertType.WARNING,"Can't enter digits for name",ButtonType.OK);
+            alert.show();
+            txtAuthor.requestFocus();
+        }
+        else {
+            if (btnAdd.getText().equals("Add")) {
 
-            ObservableList<ManageBooksTM>books=tblManageBooks.getItems();
+                ObservableList<ManageBooksTM> books = tblManageBooks.getItems();
 
-            books.add(new ManageBooksTM(txtBookId.getText(),txtName.getText(),txtAuthor.getText(),txtStatues.getText()));
+                books.add(new ManageBooksTM(txtBookId.getText(), txtName.getText(), txtAuthor.getText(), txtStatues.getText()));
+                Alert alert =new Alert(Alert.AlertType.INFORMATION,"New book add successfully! ",ButtonType.OK);
+                alert.show();
 
+            } else {
+                ManageBooksTM selectedItem = tblManageBooks.getSelectionModel().getSelectedItem();
 
-        }else{
-            ManageBooksTM selectedItem = tblManageBooks.getSelectionModel().getSelectedItem();
-
-            selectedItem.setName(txtName.getText());
-            selectedItem.setAuthorName(txtAuthor.getText());
+                selectedItem.setName(txtName.getText());
+                selectedItem.setAuthorName(txtAuthor.getText());
+                Alert alert =new Alert(Alert.AlertType.INFORMATION,"Book update successfully! ",ButtonType.OK);
+                alert.show();
+            }
         }
         tblManageBooks.refresh();
-
-
     }
 
     public void btnHome_Action(ActionEvent actionEvent) throws IOException {
@@ -126,6 +131,4 @@ public class manageBooks {
         tt.setToX(0);
         tt.play();
     }
-
-
 }
